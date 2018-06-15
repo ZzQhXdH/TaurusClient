@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <view.FullVideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_home_video_view"
+        android:visibility="visible"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ii"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="500px"
+        android:layout_marginRight="100px"
+        android:background="@drawable/selector_button_order_shipment"
+        android:text="订单取货"
+        android:textSize="40px"
+        android:textColor="@android:color/white"
+        android:elevation="200px"
+        android:id="@+id/id_home_button_order"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_buy_selector"
+        android:id="@+id/id_home_btn_buy"
+        android:text="点击购买"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/x25"
+        android:layout_margin="@dimen/x10"
+        android:layout_gravity="bottom"
+        />
+</FrameLayout>

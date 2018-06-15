@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <size android:width="200px"
+                android:height="140px"/>
+            <corners android:bottomLeftRadius="70px"
+                android:topLeftRadius="70px"
+                android:bottomRightRadius="10px"
+                android:topRightRadius="10px"/>
+            <solid android:color="@color/color_maintain_button_unpress"/>
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <size android:width="200px"
+                android:height="140px"/>
+            <corners android:bottomLeftRadius="70px"
+                android:topLeftRadius="70px"
+                android:bottomRightRadius="10px"
+                android:topRightRadius="10px"/>
+            <solid android:color="@color/color_maintain_button_press"/>
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/debug_send_background"
+        android:textColor="@color/debug_text_color"
+        android:gravity="start"
+        android:id="@+id/id_debug_raw_edit_text"
+        android:inputType="number"
+        android:digits="0123456789 abcdefABCDEF"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/x10"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/x100"
+            android:text="清空接收"
+            android:id="@+id/id_debug_raw_btn_clear"
+            android:background="@drawable/button_selector"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="发送"
+            android:id="@+id/id_debug_raw_btn_send"
+            android:background="@drawable/button_selector"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:id="@+id/id_debug_raw_scroll_view"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:background="@color/debug_receive_background"
+            android:textColor="@color/debug_text_color"
+            android:id="@+id/id_debug_raw_text_view_receive"
+            />
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        >
+
+        <ImageButton
+            android:layout_width="@dimen/x177"
+            android:layout_height="@dimen/y72"
+            android:layout_marginBottom="@dimen/y50"
+            android:id="@+id/id_menu_btn_alipay"
+            android:src="@mipmap/alipay"
+            android:scaleType="fitXY"
+            android:background="@null"
+            />
+        <ImageButton
+            android:layout_width="@dimen/x177"
+            android:layout_height="@dimen/y72"
+            android:id="@+id/id_menu_btn_wechat"
+            android:src="@mipmap/wechat"
+            android:scaleType="fitXY"
+            android:background="@null"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

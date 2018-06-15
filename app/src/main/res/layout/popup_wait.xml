@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x250"
+    android:layout_height="@dimen/x320">
+
+    <TextView
+        android:layout_width="@dimen/x250"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/x30"
+        android:gravity="center"
+        android:text="正在等待数据同步"
+        android:layout_marginTop="@dimen/x15"
+        />
+
+    <view.WaitView
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/x250"
+        android:layout_gravity="bottom|center_horizontal"
+        android:id="@+id/id_popup_wait_view"
+        />
+
+</FrameLayout>

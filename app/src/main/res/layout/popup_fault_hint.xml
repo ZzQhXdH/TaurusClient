@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="800px"
+    android:layout_height="1000px"
+    android:background="@drawable/shape_fault_hint_popup"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_margin="100px"
+        android:layout_width="600px"
+        android:layout_height="600px"
+        android:src="@drawable/ic_error"
+        android:scaleType="fitXY"
+        android:id="@+id/id_popup_fault_image_view_error" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:layout_marginRight="100px"
+        android:layout_marginLeft="100px"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="30sp"
+        android:text="机器故障"
+        android:gravity="center" />
+
+</LinearLayout>

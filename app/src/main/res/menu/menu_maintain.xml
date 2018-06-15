@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        app:showAsAction="withText"
+        android:id="@+id/menu_maintain_sort_goodtype"
+        android:title="按货道排序"/>
+    <item
+        app:showAsAction="withText"
+        android:id="@+id/menu_maintain_sort_name"
+        android:title="按名称排序"/>
+</menu>

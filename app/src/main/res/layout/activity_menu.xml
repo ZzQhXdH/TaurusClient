@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8ACBC7"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140px"
+        android:background="#3C2E3D"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="今日商品"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/x15"
+            android:id="@+id/id_menu_text_view_name"
+            />
+        <TextView
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:background="@drawable/countdown_shap"
+            android:textSize="@dimen/x18"
+            android:padding="@dimen/x8"
+            android:text="30"
+            android:id="@+id/id_menu_text_view_timer"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x10"
+            android:text="11:50"
+            android:textSize="@dimen/x15"
+            android:gravity="center"
+            android:id="@+id/id_menu_time"
+            android:textColor="#FFFFFFFF"
+            />
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/id_menu_view_pager"
+        >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:orientation="horizontal"
+        android:layout_marginLeft="100px"
+        android:layout_marginRight="100px"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="140px"
+            android:id="@+id/id_menu_btn_up"
+            android:background="@drawable/selector_maintain_button_left"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:text="上一页"
+            android:textSize="50px"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="300px"
+            android:layout_height="140px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/id_menu_btn_down"
+            android:background="@drawable/selector_maintain_button_right"
+            android:text="下一页"
+            android:textSize="50px"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

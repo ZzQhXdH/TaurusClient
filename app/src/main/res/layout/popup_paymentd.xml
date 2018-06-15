@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/alipaybackground"
+    >
+
+    <ImageView
+        android:layout_width="@dimen/x88"
+        android:layout_height="@dimen/y74"
+        android:scaleType="centerCrop"
+        android:id="@+id/id_popup_image_view"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/y45"
+        android:layout_marginLeft="@dimen/x35"
+        />
+    <ProgressBar
+        android:layout_width="@dimen/x60"
+        android:layout_height="@dimen/y50"
+        android:id="@+id/id_popup_progress_bar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/y60"
+        android:layout_marginLeft="@dimen/x49"
+        android:visibility="visible"
+        />
+
+    <TextView
+        android:layout_width="@dimen/x88"
+        android:layout_height="@dimen/y74"
+        android:id="@+id/id_popup_text_view"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/y45"
+        android:layout_marginLeft="@dimen/x35"
+        android:gravity="center"
+        android:textSize="@dimen/x15"
+        android:text="网络繁忙"
+        android:textColor="#FF0000"
+        android:visibility="invisible"
+        />
+    <Button
+        android:layout_width="@dimen/x104"
+        android:layout_height="@dimen/y31"
+        android:background="@mipmap/cancel"
+        android:layout_below="@id/id_popup_image_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y30"
+        android:id="@+id/id_popup_paymented_cancel"
+        android:text="取消付款"
+        android:textColor="#FFFFFFFF"
+        android:textSize="@dimen/y13"
+        />
+
+    <TextView
+        android:layout_width="@dimen/x300"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_below="@id/id_popup_paymented_cancel"
+        android:layout_marginTop="@dimen/y10"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFF0000"
+        android:textSize="@dimen/y13"
+        android:text="支付过程中请不要点击取消付款"
+        />
+
+    <Button
+        android:layout_width="@dimen/x104"
+        android:layout_height="@dimen/y31"
+        android:background="@mipmap/ok"
+        android:layout_below="@id/id_popup_paymented_cancel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y10"
+        android:id="@+id/id_popup_paymented_ok"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

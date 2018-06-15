@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#8ACBC7"
+    >
+
+    <ImageView
+        android:layout_marginTop="@dimen/y60"
+        android:layout_width="@dimen/x174"
+        android:layout_height="@dimen/y146"
+        android:scaleType="centerCrop"
+        android:id="@+id/id_payment_image_view"
+        android:layout_gravity="center"
+        />
+    <view.CountDownView
+        android:layout_marginTop="@dimen/y30"
+        android:layout_width="@dimen/x96"
+        android:layout_height="@dimen/y81"
+        android:id="@+id/id_payment_count_down"
+        android:layout_gravity="center"
+        />
+    <ImageView
+        android:layout_marginTop="@dimen/y30"
+        android:layout_width="@dimen/x96"
+        android:layout_height="@dimen/y81"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:id="@+id/id_payment_image_view_result"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_marginTop="@dimen/y20"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="正在出货,请稍后..."
+        android:id="@+id/id_payment_text_view"
+        android:maxLines="2"
+        android:textColor="#FFFFFFFF"
+        android:textSize="@dimen/x20"
+        />
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/x10">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="#FF000000"
+        android:text="2-1"
+        android:gravity="center"
+        android:textSize="@dimen/x15"
+        android:id="@+id/id_maintain_list_view_text_view_goodstype"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="#FF000000"
+        android:text="青椒肉丝"
+        android:gravity="center"
+        android:textSize="@dimen/x15"
+        android:id="@+id/id_maintain_list_view_text_view_name"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="#FF000000"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="@dimen/x15"
+        android:id="@+id/id_maintain_list_view_text_view_number"
+        />
+
+</LinearLayout>

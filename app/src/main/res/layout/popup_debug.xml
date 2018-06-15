@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    >
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/id_debug_popup_debug"
+        android:text="进入调试界面"
+        android:background="@drawable/button_selector"
+        android:layout_marginRight="@dimen/x20"
+        />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/id_debug_popup_safe"
+        android:text="进入维护界面"
+        android:background="@drawable/button_selector"
+        />
+
+</LinearLayout>

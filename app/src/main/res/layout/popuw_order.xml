@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/x10"
+    android:background="@null"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@null"
+        >
+        <ImageView
+            android:layout_width="@dimen/x174"
+            android:layout_height="@dimen/y146"
+            android:layout_centerInParent="true"
+            android:id="@+id/id_popuw_order_image"
+            android:scaleType="fitXY"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@null"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:textSize="@dimen/x20"
+            android:text="汉方煨汤羊腩"
+            android:textAlignment="center"
+            android:id="@+id/id_popu_text_view_name"
+            android:textColor="#FF00FF"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="start"
+            android:textSize="@dimen/x20"
+            android:text="$20"
+            android:id="@+id/id_popu_text_view_price"
+            android:textColor="#FFFF0000"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x12"
+        >
+        <Button
+            android:layout_width="@dimen/x104"
+            android:layout_height="@dimen/y31"
+            android:id="@+id/id_popuw_btn_ok"
+            android:background="@mipmap/ok"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            />
+        <Button
+            android:layout_width="@dimen/x104"
+            android:layout_height="@dimen/y31"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@mipmap/cancel"
+            android:id="@+id/id_popuw_btn_cancel"
+            android:text="取消"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/y13"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

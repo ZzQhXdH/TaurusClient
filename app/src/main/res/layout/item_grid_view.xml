@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="433px"
+    android:layout_height="503px"
+    android:background="@null"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:layout_width="433px"
+        android:layout_height="433px"
+        android:minHeight="433px"
+        android:minWidth="433px"
+        android:background="@null"
+        android:id="@+id/id_menu_grid_framelayout"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="433px"
+            android:minHeight="433px"
+            android:id="@+id/id_item_image_view"
+            android:scaleType="fitXY"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/text_shade"
+            android:text="已售空"
+            android:textColor="#FFFFFFFF"
+            android:gravity="center"
+            android:textSize="@dimen/x25"
+            android:id="@+id/id_menu_grid_text_view"
+            android:visibility="visible"
+            />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/id_item_text_view_price"
+        android:text="$29"
+        android:textColor="#000000"
+        android:textSize="@dimen/x15"
+        android:textAlignment="center"
+        />
+</LinearLayout>
+
