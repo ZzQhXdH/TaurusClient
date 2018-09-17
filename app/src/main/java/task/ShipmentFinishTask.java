@@ -3,6 +3,7 @@ package task;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -44,6 +45,7 @@ public class ShipmentFinishTask implements Runnable {
         JSONObject object = new JSONObject();
         try {
             object.put("macAddr", WaresManager.getInstance().getMacAddress());
+            object.put("replenInfos", new JSONArray());
         } catch (JSONException e) {
             e.printStackTrace();
             return;

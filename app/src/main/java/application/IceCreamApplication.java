@@ -11,6 +11,7 @@ import java.net.URLEncoder;
 import java.util.HashSet;
 import java.util.Set;
 
+import android_serialport_api.SerialPortFinder;
 import bean.TouchRect;
 import bean.WaresManager;
 import cn.jpush.android.api.JPushInterface;
@@ -60,7 +61,7 @@ public class IceCreamApplication extends Application {
         if (mac == null) {
           //  mac = "224412532";
            // mac = "00:18:05:0B:D5:70".toLowerCase();
-            mac = "00:18:05:0A:2B:13".toLowerCase();
+            mac = "00:18:05:0A:2B:13";
            // mac = "11:22:33:44:55:66".toLowerCase();
         }
         mac = mac.toLowerCase();
@@ -75,19 +76,5 @@ public class IceCreamApplication extends Application {
         JPushInterface.init(this);
         mRegisterId = JPushInterface.getRegistrationID(this);
         Log.d("regId", mRegisterId);
-
-        ThreadUtil.instance().getAsyncHandler().post(() -> {
-
-            while (true)
-            {
-                try {
-                    HttpUtil.xUpdateRegisterId();
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
     }
 }

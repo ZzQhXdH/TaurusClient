@@ -165,8 +165,7 @@ public class SerialPortService extends IntentService {
 
             case AbstractResult.FAULT:
                 FaultManager.getInstance().setFaultResult(result);
-                FaultResult faultResult = (FaultResult) result;
-                if (faultResult.isFault()) { // 如果有错误则上传错误数据
+                if (FaultManager.getInstance().isNoEquals()) { // 如果有错误则上传错误数据
                     ThreadUtil.instance().getAsyncHandler().post(new UpFaultTask());
                 }
                 return;
@@ -243,7 +242,6 @@ public class SerialPortService extends IntentService {
             for (int i = 0; i < len; i ++) {
                 addByte(bytes[i]);
             }
-            ThreadUtil.sleep(10);
         }
 
         mPort.close();

@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -14,6 +16,7 @@ import cn.jpush.android.api.JPushInterface;
 import protocol.AbstractProtocol;
 import protocol.ShipmentProtocol;
 import serialport.SerialPortManager;
+import task.WaresUpdateTask;
 import util.HttpUtil;
 import util.ThreadUtil;
 
@@ -84,6 +87,7 @@ public class JPushMessageReceiver extends BroadcastReceiver {
                     break;
 
                 case PUSH_ID_PRICE:
+                    onPriceChange();
                     Log.d("推送", "价格发生变化");
                     break;
             }
@@ -204,6 +208,17 @@ public class JPushMessageReceiver extends BroadcastReceiver {
         });
     }
 
+    private void onPriceChange() {
 
+        Handler handler = new Handler() {
+
+            @Override
+            public void handleMessage(Message msg) {
+
+                Toast.makeText(IceCreamApplication.getAppContext(), "价格已经更新", Toast.LENGTH_SHORT).show();
+            }
+        };
+        ThreadUtil.instance().getDelayHandler().post(new WaresUpdateTask(handler));
+    }
 
 }

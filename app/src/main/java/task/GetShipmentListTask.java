@@ -18,7 +18,7 @@ import util.HttpUtil;
 
 /**
  * Created by xdhwwdz20112163.com on 2018/1/20.
- * 获取补货清单任务
+ * 创建补货清单任务
  */
 
 public class GetShipmentListTask implements Runnable {

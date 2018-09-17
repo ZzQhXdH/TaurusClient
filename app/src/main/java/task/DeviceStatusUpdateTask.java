@@ -16,7 +16,7 @@ import util.ThreadUtil;
 
 public class DeviceStatusUpdateTask implements Runnable {
 
-    public static final int DELAY_TIME = 60 * 60 * 1000;
+    public static final int DELAY_TIME = 3 * 60 * 1000;
 
     public static void start() {
         ThreadUtil.instance().getDelayHandler().post(new DeviceStatusUpdateTask());

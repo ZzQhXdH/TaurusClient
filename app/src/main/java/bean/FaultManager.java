@@ -47,6 +47,7 @@ public class FaultManager {
     private String mTemperature = "0℃";
 
     private FaultResult mFaultResult = null;
+    private FaultResult mOldFaultResult = null;
     private DoorStatusResult mDoorStatusResult = null;
     private TemperatureResult mTemperatureResult = null;
 
@@ -63,8 +64,19 @@ public class FaultManager {
     }
 
     public synchronized void setFaultResult(AbstractResult result) {
+        mOldFaultResult = mFaultResult;
         mFaultResult = (FaultResult) result;
     }
+
+    public synchronized boolean isNoEquals() {
+
+        if (mFaultResult == null || mOldFaultResult == null) {
+            return true;
+        }
+        return !mFaultResult.equals(mOldFaultResult);
+    }
+
+    public synchronized FaultResult getOldFauleResult() { return mOldFaultResult; }
 
     public synchronized FaultResult getFaultResult() {
         return mFaultResult;

@@ -15,10 +15,12 @@ public class ShipmentDownTask implements Runnable {
 
     private static final String TAG = ShipmentDownTask.class.getSimpleName();
 
-    public String mGoodsType;
+    private String mGoodsType;
+    private int mHeapTime;
 
-    public ShipmentDownTask(final String goodsType) {
+    public ShipmentDownTask(final String goodsType, int  heapTime) {
         mGoodsType = goodsType;
+        mHeapTime = heapTime;
     }
 
     @Override
@@ -31,9 +33,7 @@ public class ShipmentDownTask implements Runnable {
         }
         byte row = Byte.parseByte(list[0]);
         byte col = Byte.parseByte(list[1]);
-        ShipmentProtocol protocol = new ShipmentProtocol(col, row, (byte) 5, 0);
+        ShipmentProtocol protocol = new ShipmentProtocol(col, row, (byte) 5, mHeapTime);
         SerialPortManager.getInstance(null).write(protocol.toByteArray());
     }
-
-
 }

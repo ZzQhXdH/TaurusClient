@@ -57,6 +57,7 @@ public class GetAlipayQRCodeTask implements Runnable {
             mHandler.sendEmptyMessage(MenuFragment.NET_WORD_ERROR);
             return;
         }
+
         Log.e("调试", result);
         JSONObject object;
         try {

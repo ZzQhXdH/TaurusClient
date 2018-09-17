@@ -20,6 +20,7 @@ public class RawSerialPort implements ISerialPort {
 
     private static ISerialPort mPort = null;
     private static final String SERIAL_PORT_PATH = "/dev/ttymxc2";
+    private static final String SERIAL_PORT_PATH2 = "/dev/ttyS3";
 
     private InputStream mInputStream = null;
     private OutputStream mOutputStream = null;

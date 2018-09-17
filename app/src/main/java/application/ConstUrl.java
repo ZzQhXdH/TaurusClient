@@ -1,26 +1,19 @@
 package application;
 
-import protocol.SettingTemperature;
-
 /**
  * Created by xdhwwdz20112163.com on 2018/1/29.
  */
 
 public class ConstUrl {
-
+// 00:18:05:0b:d5:7a
     /**
      * 服务器基URL
      */
-   // public static final String BASE_URL = "http://wechat.hontech-rdcenter.com";
-    //public static final String BASE_URL = "http://192.168.1.101:8080";
-   // public static final String BASE_URL = "http://101.132.150.93:8080";
-    public static final String BASE_URL = "http://hfrd.hontech-rdcenter.com:8080";
+    //public static final String BASE_URL = "http://hfrd.hontech-rdcenter.com:8080";
+   // public static final String BASE_URL = "http://www.hcsunmo.cn:7070";
+    public static final String BASE_URL = "http://test.hontech-rdcenter.com:8080";
 
-    public static final String BASE_ID_ = "http://10.1.8.34:8080";
-
-    public static final String REGISTER_ID_URL = BASE_ID_ + "/bg-uc/sbzt/getRegistrationId .json";
-
-    public static final String COULD_BASE_URL = BASE_URL;
+    private static final String COULD_BASE_URL = BASE_URL;
 
     public static final String PUSH_RETURN = BASE_URL + "/bg-uc/jf/bg/basic/long-control/returnmsg.json";
 
@@ -116,10 +109,10 @@ public class ConstUrl {
      * 获取支付宝二维码
      * 使用POST Form方式传递参数
      * @parameter goods {
-     *              macAddress: mac地址
-     *              tradename: 商品名称
-     *              price: 价格
-     *              ID: id
+     *                      macAddress: mac地址
+     *                      tradename: 商品名称
+     *                      price: 价格
+     *                      ID: id
      *            }
      * @return 二维码Url链接 Json {"alipay":"二维码Url"}
      */

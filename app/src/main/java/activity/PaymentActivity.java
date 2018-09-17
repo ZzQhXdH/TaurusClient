@@ -55,7 +55,7 @@ public class PaymentActivity extends AppCompatActivity {
     /**
      * 最大超时时间60s
      */
-    private static final int MAX_COUNT = 60;
+    private static final int MAX_COUNT = 180;
 
     /**
      * 出货超时计数器
@@ -74,6 +74,7 @@ public class PaymentActivity extends AppCompatActivity {
     private Wares mWares = null;
     private LocalBroadcastManager mLocalBroadcastManager = null;
     private String mGoodsType = null;
+    private int mHeapTime = 0;
 
     private boolean isShipmentSuccess = false;
 
@@ -129,6 +130,7 @@ public class PaymentActivity extends AppCompatActivity {
         mWares = WaresManager.getInstance().getWares(position);
         Glide.with(this).load(Uri.parse(mWares.getWaresImage2())).into(mImageViewWares);
         mGoodsType = getGoodsType();
+        mHeapTime = mWares.getHeatingTime();
     }
 
     private void initEvent() {
@@ -140,7 +142,7 @@ public class PaymentActivity extends AppCompatActivity {
         filter.addAction(AbstractResult.QUERY_STATUS);
         mLocalBroadcastManager.registerReceiver(mReceiver, filter);
 
-        new ShipmentDownTask(mGoodsType).run(); // 直接在主线程发送出货任务 确保实时性
+        new ShipmentDownTask(mGoodsType, mHeapTime).run(); // 直接在主线程发送出货任务 确保实时性
 
         sendTimeOutMessage();
 

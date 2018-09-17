@@ -85,6 +85,8 @@ import util.ThreadUtil;
 public class HomeActivity extends AppCompatActivity
         implements View.OnClickListener, MediaPlayer.OnCompletionListener {
 
+    public static boolean gShowFlag = false;
+
     private static final String TAG = HomeActivity.class.getSimpleName();
 
     /**
@@ -257,7 +259,6 @@ public class HomeActivity extends AppCompatActivity
         if (mPopupPasswordWindow == null) {
             return;
         }
-
         if (mPopupPasswordWindow.isShowing()) {
             mPopupPasswordWindow.dismiss();
         }
@@ -320,6 +321,7 @@ public class HomeActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        gShowFlag = true;
         initUi();
         initEvent();
         boolean ok = isPermissionChecked();
@@ -337,14 +339,11 @@ public class HomeActivity extends AppCompatActivity
     public void onWindowFocusChanged(boolean hasFocus) {
 
         super.onWindowFocusChanged(hasFocus);
-
         if (hasFocus) {
-
             if (FaultResult.isFault) {
                 new FaultHintPopupWindow().show(mBtnBuy);
                 return;
             }
-
             BootBusyInitPopupWindow.showInOnce(mBtnBuy);
         }
     }
@@ -362,6 +361,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     protected void onResume() {
 
+        gShowFlag = true;
         playStart();
         super.onResume();
     }
@@ -369,6 +369,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     protected void onPause() {
 
+        gShowFlag = false;
         playPause();
         dismissPopupWindow();
         dismissPasswordWindow();
@@ -685,7 +686,8 @@ public class HomeActivity extends AppCompatActivity
         public void show(View parent) {
 
             View view = LayoutInflater.from(IceCreamApplication.getAppContext()).inflate(R.layout.popup_busy_init, null);
-            mPopupWindow = new PopupWindow(view, 800, 1200, true);
+            mPopupWindow = new PopupWindow(view, 800, 1200, false);
+            mPopupWindow.setOutsideTouchable(true);
             mPopupWindow.showAtLocation(parent, Gravity.CENTER, 0, 0);
             mTextView = view.findViewById(R.id.id_popup_busy_text_view);
 

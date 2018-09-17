@@ -286,16 +286,6 @@ public class HttpUtil {
         return null;
     }
 
-    public static String xUpdateRegisterId() throws Exception {
-
-        JSONObject object = new JSONObject();
-        object.put("macAddr", WaresManager.getInstance().getMacAddress());
-        object.put("registrationId", IceCreamApplication.mRegisterId);
-        object.put("machModel", IceCreamApplication.APP_NAME);
-        Log.d("regid", object.toString());
-        return post(ConstUrl.REGISTER_ID_URL, object.toString());
-    }
-
     public interface IHttpCallback {
 
         void onCallback(Response response);

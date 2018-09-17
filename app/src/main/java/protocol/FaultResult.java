@@ -1,5 +1,7 @@
 package protocol;
 
+import java.util.Arrays;
+
 /**
  * Created by me77 on 2018/1/6.
  */
@@ -99,6 +101,11 @@ public class FaultResult extends AbstractResult {
         }
         isFault = false;
         return false;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return Arrays.equals(((FaultResult) obj).mData, this.mData);
     }
 
     @Override

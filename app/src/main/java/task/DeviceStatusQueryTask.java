@@ -1,5 +1,6 @@
 package task;
 
+import activity.HomeActivity;
 import application.IceCreamApplication;
 import bean.HeatUpTimeManager;
 import bean.HeatUpTimeObject;
@@ -61,13 +62,18 @@ public class DeviceStatusQueryTask implements Runnable {
                 break;
 
             case 3:
-                HeatUpTimeObject object = HeatUpTimeManager.getInstance().getHeatUpTimeObject();
-                if (object == null) {
-                    Logger.instance().file("还没有获取到温度数据");
-                    SerialPortManager.getInstance(IceCreamApplication.getAppContext()).write(DefaultTemperature);
-                } else {
-                    setTemperature(object);
+
+                if (HomeActivity.gShowFlag)
+                {
+                    HeatUpTimeObject object = HeatUpTimeManager.getInstance().getHeatUpTimeObject();
+                    if (object == null) {
+                        Logger.instance().file("还没有获取到温度数据");
+                        SerialPortManager.getInstance(IceCreamApplication.getAppContext()).write(DefaultTemperature);
+                    } else {
+                        setTemperature(object);
+                    }
                 }
+
                 mCommandIndex = 0;
                 break;
         }

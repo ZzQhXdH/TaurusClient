@@ -34,7 +34,7 @@ public class WaresUpdateTask implements Runnable {
             Log.d("商品", temp);
         } catch (Exception e) {
             e.printStackTrace();
-            ThreadUtil.instance().getAsyncHandler().postDelayed(this, 1000);
+            ThreadUtil.instance().getDelayHandler().postDelayed(this, 1000);
             return;
         }
 
@@ -43,7 +43,7 @@ public class WaresUpdateTask implements Runnable {
             WaresManager.getInstance().setMach(waresJsonObject.getMacAddress()); // 设置机器名称
             WaresManager.getInstance().updateWares(waresJsonObject.getWares());
         } else {
-            ThreadUtil.instance().getAsyncHandler().postDelayed(this, 1000);
+            ThreadUtil.instance().getDelayHandler().postDelayed(this, 1000);
             return;
         }
         mHandler.sendEmptyMessage(WARES_UPDATE_WHAT);

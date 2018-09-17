@@ -39,6 +39,7 @@ import task.GetRawShipmentListTask;
 import task.GetShipmentListTask;
 import task.ShipmentFinishTask;
 
+import task.WaresUpdateTask;
 import util.ThreadUtil;
 
 /**
@@ -82,8 +83,6 @@ public class MaintainActivity extends AppCompatActivity implements View.OnClickL
         sort.sortForName();
         sort = (FragmentSort) mFragments[1];
         sort.sortForName();
-      //  mActionBar.setTitle(String.format("%s"));
-      //  mActionBar.setTitle(ReplenishManager.getInstance().getUseAddr());
     }
 
     @Override
@@ -137,6 +136,7 @@ public class MaintainActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
         ThreadUtil.instance().getAsyncHandler().post(new ShipmentFinishTask(mStatus)); // 往线程池添加一个补货完成任务
+        ThreadUtil.instance().getAsyncHandler().post((new WaresUpdateTask(new Handler())));
         finish();
     }
 
@@ -154,10 +154,11 @@ public class MaintainActivity extends AppCompatActivity implements View.OnClickL
             AlertDialog dialog = new AlertDialog.Builder(this)
                     .setPositiveButton("确定", ((dialog1, which) -> {
                 /**
-                 * 获取补货清单
+                 * 创建新的补货清单
                  */
                 mStatus = true;
                 ThreadUtil.instance().getAsyncHandler().post(new GetShipmentListTask(mHandler));
+                ThreadUtil.instance().getAsyncHandler().post(new GetRawShipmentListTask(mHandler));
                 showToast("开始创建补货清单");
             }))
                     .setNeutralButton("取消", null)
@@ -168,7 +169,7 @@ public class MaintainActivity extends AppCompatActivity implements View.OnClickL
         });
         mBtnCreateRawShipment.setOnClickListener(v -> {
             /**
-             * 获取原始补货清单
+             * 查看补货清单
              */
             mStatus = false;
             ThreadUtil.instance().getAsyncHandler().post(new GetRawShipmentListTask(mHandler));
